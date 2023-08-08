@@ -172,35 +172,9 @@ Challenge: Data models
 
 .. rubric:: UML diagram
 
-.. mermaid::
+.. mermaid:: models.mmd
     :align: center
     
-    erDiagram
-
-        topic {
-            string title
-            string description
-        }
-
-        article {
-            string title
-            string content
-            datetime created_at
-            datetime updated_at
-        }
-
-        comment {
-            datetime created_at
-            string message
-        }
-
-        user
-
-        article ||--|{ comment : contains
-        topic }|--o{ article : contains
-        topic }o--o{ user: prefers
-        user }|--|| article : author
-        user }|--|| comment : author
 
 Challenge: ORM
 --------------
