@@ -83,8 +83,8 @@ return within HTTP response.
 -   ``/logout/``: Logout page. This view should redirect user back to
     homepage.
 
-.. important::
-    Optional tasks
+.. warning::
+    Optional task(s)
 
     -   ``/archive/<int:year>/<int:month>/``:
         This view provides a list of articles published on a specified month
@@ -174,7 +174,6 @@ Challenge: Data models
 
 .. mermaid:: models.mmd
     :align: center
-    
 
 Challenge: ORM
 --------------
@@ -190,13 +189,19 @@ inside the project's database.
 -   All views related to a single entity (*detail*, *update*, *delete*,
     *profile*) should raise ``Http404`` in case entity could not be
     fetched.
--   Create a service to fetch articles, ordered by a specified user
-    preferences.
 
 .. hint::
     It's common to store dedicated functions/classes that supports some
     specific business logic in a separate module called ``services.py`` or
     ``utils.py`` within an application directory.
+
+.. warning::
+    Optional task(s)
+
+    -   Create a service to fetch articles, ordered by a specified user
+        preferences. This means, topics preferred by a user affects articles
+        orders. Queryset should be ordered in way, to have articles with most
+        corresponding topics at the begging.
 
 Challenge: Templates
 --------------------
@@ -213,13 +218,6 @@ Challenge: Templates
 -   Each page has a descriptive title HTML tag, which included ``| Blog``
     suffix, e.g. "Articles | Blogs", "Sample | Blog", "Login | Blog" etc.
 -   Each page should contain a link to homepage (``/`` URL route).
--   (*Optional*) Each page should contain an inclusion-block(s) with following
-    links:
-
-    -   ``/registration/``: new user registration form
-    -   ``/login/``: user login form
-    -   ``/create/``: article creation page
-
 -   Each page contains a list of registered topics. Each view of this kind
     filters only articles of a relevant topic. This should be implemented
     with a custom template context processor.
@@ -227,11 +225,16 @@ Challenge: Templates
 -   Application-level templates should be located within appropriate
     applications.
 
-.. important::
-    Optional tasks
+.. warning::
+    Optional task(s)
 
     -   Each page should contain a list of links to archive views for the
         last year.
+    -   Each page should contain an inclusion-block(s) with following links:
+
+        -   ``/registration/``: new user registration form
+        -   ``/login/``: user login form
+        -   ``/create/``: article creation page
 
 .. rubric:: Articles list
 
@@ -327,7 +330,7 @@ Challenge: Templates
 Challenge: Articles' slugs
 --------------------------
 
-.. important::
+.. warning::
     This is an optional challenge in addition to:
 
     - `Challenge: Functional views`_
@@ -397,7 +400,7 @@ Challenge: Authentication
 -   ``POST`` request ``/deactivate/`` should mark current authenticated user as
     *deleted* and log them user.
 
-.. important::
+.. warning::
     Optional task(s)
 
     -   Adjust the order of article list according to authenticated user
@@ -408,7 +411,7 @@ Challenge: Authentication
         to activate an account and send a confirmation email, when all is done.
 
 Challenge: Article related forms
-----------------------------------
+--------------------------------
 
 -   Implement a article form. This form will be used to create new articles
     and to update existing ones.
@@ -423,9 +426,14 @@ Challenge: Article related forms
     -   article comment (create a related comment)
     -   article deletion
 
-.. note::
-    It's ok to use *pre-defined* author for now, or select author by random.
-    This will be fixed in the next section.
+-   Only authenticated users can create articles.
+-   Article can be edited only by its author.
+-   Article can be deleted only by its author.
+-   Only authenticated users can comment articles.
+
+.. todo:
+    Add admin site challenge: customize admin site view, forms etc.
+    Apply admin permissions and restrictions for the admin site.
 
 Challenge: Class-Based Views
 ----------------------------
@@ -468,8 +476,11 @@ Challenge: Serializers
 Challenge: API views
 --------------------
 
-All blog-site functionality are to be reflected via REST API. It's ok to
-use *pre-defined* user as a article's author for now.
+All blog-site functionality are to be reflected via REST API.
+
+.. note::
+    It's ok to pass *pre-defined* user as argument in request's body.
+    This will be fixed in the next challenge.
 
 Challenge: Authentication and Permissions
 -----------------------------------------
@@ -487,7 +498,3 @@ Challenge: Authentication and Permissions
 -   Authorized users can ``create`` articles or ``update`` and ``delete``
     articles created by them.
 -   Authorized users can add comments to a specified article.
-
-.. todo:
-    Add admin site challenge: customize admin site view, forms etc.
-    Apply admin permissions and restrictions for the admin site.

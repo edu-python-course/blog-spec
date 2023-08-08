@@ -7,17 +7,15 @@ erDiagram
 
     article {
         string title
-        string content
-        datetime created_at
-        datetime updated_at
+        text content
+        date created_at
+        date updated_at
     }
 
     comment {
         datetime created_at
-        string message
+        text message
     }
-
-    user
 
     article ||--|{ comment: contains
     topic }|--o{ article: contains
