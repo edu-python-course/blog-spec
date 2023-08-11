@@ -172,7 +172,7 @@ Challenge: Data models
 
 .. rubric:: UML diagram
 
-.. mermaid:: models.mmd
+.. mermaid:: mermaid/models.mmd
     :align: center
 
 Challenge: ORM
