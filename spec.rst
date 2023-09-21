@@ -6,8 +6,8 @@
 .. _Bootstrap template:
     https://github.com/edu-python-course/blog-bootstrap
 
-Blog Project Specification
-==========================
+Blog Site
+=========
 
 The project aims to develop a robust and user-friendly web application using
 the Django framework. The primary objective is to create a blogging platform

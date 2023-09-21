@@ -1,8 +1,12 @@
 ###############################################################################
-                          Blog Project Specification
+                            Blog Site Specification
 ###############################################################################
 
-This repo contains a specification for a training Django project.
+This repository contains the specification for the Blog Site project,
+intended for educational purposes.
+
+Project Description
+===================
 
 The project aims to develop a robust and user-friendly web application using
 the Django framework. The primary objective is to create a blogging platform
@@ -11,15 +15,17 @@ The application will provide an intuitive interface for authors to compose
 and format their articles, while also offering a seamless reading experience
 for visitors.
 
-Repository structure
+Repository Structure
 ====================
 
-::
+This repository contains only the project specification and related documents,
+such as UML diagrams, data fixtures etc. No actual code implementation here.
+Anyone can refer this documentation to understand the project requirements and
+design before starting the implementation phase.
 
-    /
-    |-- mermaid/
-    |-- spec.rst
-    |-- README.rst
+Documents
+=========
 
-The master specification document is **spec.rst**.
-**mermaid** directory is the home of all diagrams, used in the documentation.
+-   `Blog Site Specification`_
+
+.. _Blog Site Specification: ./spec.rst
