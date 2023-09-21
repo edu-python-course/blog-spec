@@ -17,9 +17,9 @@ Repository structure
 ::
 
     /
-    |-- docs/
-    |---- mermaid/
+    |-- mermaid/
+    |-- spec.rst
     |-- README.rst
 
-All documentation lies in **docs** directory.
+The master specification document is **spec.rst**.
 **mermaid** directory is the home of all diagrams, used in the documentation.
