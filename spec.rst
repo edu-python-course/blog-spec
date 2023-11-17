@@ -71,6 +71,8 @@ return within HTTP response.
 -   ``/<article>/update/``: A view to update an existing article data.
 -   ``/<article>/delete/``: A view to confirm article deletion.
 -   ``/topics/``: A list of topics available on the site.
+-   ``/topics/<topic>/add/``: Add the selected topic to preferred topics list.
+-   ``/topics/<topic>/remove/``: Removes the selected topic from preferred.
 -   ``/topics/<topic>/subscribe/``: A view to subscribe for a topic.
 -   ``/topics/<topic>/unsubscribe/``: A view to unsubscribe from a topic.
 -   ``/profile/<str:username>/``: A site user's personal page.
@@ -347,7 +349,7 @@ Challenge: Articles' slugs
 -   ``slug`` should be auto-generated on article save.
     The pattern is ``article.title-article.created_date``,
     e.g. "Sample article" created at "03/24/2023" should receive slug:
-    ``sample-blog-article-2023-03-23``.
+    ``sample-article-2023-03-24``.
 -   Update detail view URL path with article slug as dynamic portion.
 
 Challenge: Auth forms
@@ -399,6 +401,9 @@ Challenge: Authentication
 
 -   ``POST`` request ``/deactivate/`` should mark current authenticated user as
     *deleted* and log them user.
+-   Authenticated users should be able to adjust their preferred topics lists.
+-   Authenticated users should be able to **subscribe** or **unsubscribe** for
+    a selected topic.
 
 .. warning::
     Optional task(s)
@@ -476,7 +481,7 @@ Challenge: Serializers
 Challenge: API views
 --------------------
 
-All blog-site functionality are to be reflected via REST API.
+All blog-site functionality are to be mirrored via REST API.
 
 .. note::
     It's ok to pass *pre-defined* user as argument in request's body.
@@ -498,3 +503,4 @@ Challenge: Authentication and Permissions
 -   Authorized users can ``create`` articles or ``update`` and ``delete``
     articles created by them.
 -   Authorized users can add comments to a specified article.
+-   Authorized users can adjust their topics preferences.
