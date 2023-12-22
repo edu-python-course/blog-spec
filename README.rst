@@ -28,4 +28,4 @@ Documents
 
 -   `Blog Site Specification`_
 
-.. _Blog Site Specification: ./spec.rst
+.. _Blog Site Specification: ./index.rst
