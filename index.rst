@@ -174,8 +174,15 @@ Challenge: Data models
 
 .. rubric:: UML diagram
 
-.. mermaid:: mermaid/models.mmd
-    :align: center
+.. only:: html
+
+    .. mermaid:: mermaid/models.mmd
+        :align: center
+
+.. only:: latex
+
+    .. figure:: mermaid/models.mmd.png
+        :align: center
 
 Challenge: ORM
 --------------
